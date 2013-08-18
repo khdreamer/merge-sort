@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MergeSort</title>
+  <link rel="stylesheet" href="../public/stylesheets/style.css">
+  <script type="text/javascript" src="../public/javascripts/jquery-1.10.2.min.js"></script>
+  <script type="text/javascript" src="../public/javascripts/jquery-ui-1.10.3.custom.min.js"></script>
+  <script type="text/javascript" src="../public/javascripts/slide.js"></script>
+  <script type="text/javascript" src="../public/javascripts/divide_conquer.js"></script>
+  <script type="text/javascript" src="../public/javascripts/upload.js"></script>
+</head>
+<body>
+  <div id="navbar">
+    <ul>
+      <li class="step0 current_step">MergeSort</li>
+      <li class="step1">上傳課表</li>
+      <li class="step2">各個擊破</li>
+      <li class="step3">合併串連</li>
+      <li class="step4">謝謝光臨</li>
+    </ul>
+  </div>
+  <div id="test_btn"></div>
+  <div id="content">
+    <div id="page0">
+      
+    </div>
+    <div id="page1">
+      <div class="title_block">
+        <div class="title">
+          <p part="step_num">Step1</p>
+          <p part="words">上傳課表</p>
+        </div>
+        <div class="subtitle">
+          <p>下載並上傳你的課表，我們會加以整理好讓你<strong>各個擊破</strong></p>
+        </div>
+      </div>
+      <div class="canvas">
+        <p>1 到<a href="https://nol.ntu.edu.tw/nol/coursesearch/myschedule.php">我預計要選的課程</a>找到你的課表。過程中你可能會需要用台大帳號登入。</p>
+        <p>2 在課表的頁面，按下 Ctrl+S (mac 上是 ⌘+S) 或選擇另存網頁 (如圖)，下載課表頁面。</p>
+        <img src="../public/images/save_as.png" alt="download your schedule">
+        <p>3 上傳你的課表，也就是下載下來的 myschedule.php.html 檔案。<br>我們會開始依照時間為你所選的課程分組。</p>
+        <form method="post" enctype="multipart/form-data" action="/upload">
+          <input type="file" name="courses" placeholder="按一下以選擇檔案">
+          <a href="#" id="upload_btn"><div>按這裡選擇檔案</div></a>
+          <input type="button" value="上傳">
+        </form>
+      </div>
+    </div>
+    <div id="page2">
+      <div class="title_block">
+        <div class="title">
+          <p part="step_num">Step2</p>
+          <p part="words">各個擊破</p>
+        </div>
+        <div class="subtitle">
+          <p>我們已經照衝堂時間幫你分好區段了<br>你現在可以先在各區段排好志願，暫時不管沒衝堂的課</p>
+        </div>
+      </div>
+      <div class="canvas">
+        
+
+      </div>
+    </div>
+    <div id="page3">
+      
+    </div>
+    <div id="page4">
+      
+    </div>
+
+  </div>
+
+  
+</body>
+</html>

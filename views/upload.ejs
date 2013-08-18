@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <meta http-equiv="Content-Type" content="text/html; charset=Big5">
+  </head>
+  <body>
+    <h1><%= title %></h1>
+
+    <form method="post" enctype="multipart/form-data" action="/upload_file">
+      <input type="file" name="courses">
+      <input type="submit">
+    </form>
+
+    <% courses.forEach(function(c, i){ %>
+    <p>
+      <span>
+        <%= i %> <%= c['time'] %>
+      </span>
+    </p>
+    <% }); %>
+
+  </body>
+</html>
