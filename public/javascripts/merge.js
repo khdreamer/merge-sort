@@ -11,6 +11,7 @@ function createMergePlace(){
   $("#page2 > .canvas > .group").each(function(i, e){
 
     var sorted_group = $(this).clone();
+    sorted_group.css({"left": "", "top": ""});
     sorted_group.removeClass();
     sorted_group.find("ul").removeClass("ui-sortable");
     sorted_group.addClass("sorted_group");

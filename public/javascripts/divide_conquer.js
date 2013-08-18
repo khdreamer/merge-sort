@@ -127,6 +127,7 @@ function createGroups(group_data, group_num){
   group.draggable( {
   
     handle: "div[class*=label]",
+    containment: "body",
     start: function() {
       $(".group_selected").removeClass("group_selected");
       $(this).addClass("group_selected");    
