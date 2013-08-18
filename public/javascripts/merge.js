@@ -25,8 +25,7 @@ function createMergePlace(){
     .addClass("course")
     .css("cursor", "move")
     .draggable({
-      revert: "invalid"//,
-      // appendTo: "#sink"
+      revert: "invalid"
     });
 
   // set sink
@@ -50,6 +49,30 @@ function createMergePlace(){
 
     }
   });
+
+  $("div.sorted_group ul.courses li").click(function(){
+
+    // setup sink
+    var sink = $("#sink");
+    sink.find("p").css("opacity", 0.5);
+      if(sink.children().length < 2){ 
+
+        sink.append( $("<ol>") );
+        $("div#sink ol").sortable();
+
+    }
+    if(sink.find("ol").children().length == 5) sink.css("height", "auto");
+    sink.find("p").css("line-height", sink.outerHeight() + "px");
+
+    // append
+    var li = $( "<li></li>" ).text( $(this).text() );
+    sink.find("ol").append(li);
+    $(this).remove();
+
+    // other settings
+    $("html, body").height($("#page3").outerHeight());
+
+  }).css("cursor", "pointer");
 
   // done
   $("#page3 > .canvas > .next_page").click(function(){

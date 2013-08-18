@@ -92,6 +92,7 @@ function createSchedule(data){
     canvas.append(groups_arr[i]);
 
   }
+  
   var btn = $("<div class=\"next_page\">排好了</div>");
   $("#page2 .canvas").append(btn);
 
@@ -124,17 +125,17 @@ function createGroups(group_data, group_num){
 
   ul.sortable();
   group.append(ul);
+  group.attr("group_num", group_num);
   group.draggable( {
   
     handle: "div[class*=label]",
-    containment: "body",
+    containment: "body",//[0, 65, $("body").width(), $("#page2").outerHeight()-65],
     start: function() {
       $(".group_selected").removeClass("group_selected");
       $(this).addClass("group_selected");    
     }
 
   });
-  group.attr("group_num", group_num);
   group.click(function(){
 
     $(".group_selected").removeClass("group_selected");

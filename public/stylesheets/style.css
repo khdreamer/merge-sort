@@ -20,7 +20,7 @@ body {
 
   overflow: hidden;
   background: url("/images/shattered_@2X.png");
-  /*background: url("../images/shattered_@2X.png");*/
+  margin: 65px 0 0 0;
 
 }
 
@@ -84,6 +84,7 @@ a {
   height: 65px;
   border-bottom: 1px solid #bbb;
   position: fixed;
+  top: 0;
   z-index: 100;
 
 }
@@ -155,7 +156,7 @@ a {
 
   position: absolute;
   width: 80%; 
-  padding: 165px 0 50px 0;
+  padding: 100px 0 50px 0;
 
 }
 
@@ -477,7 +478,8 @@ div#sink li {
 
   font-size: 18px;
   line-height: 18px;
-  padding: 5px 20px;
+  padding: 5px 20px 5px 0;
+  margin: 0 0 0 20px;
   height: 28px;
   cursor: move;
   color: #444;
