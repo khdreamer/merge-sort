@@ -10,6 +10,8 @@ $(function(){
 
   $("input[type=button]").click(function(){
 
+    $(this).css("background-color", "#717808");
+
     console.log("uploading");
     var formData = new FormData($("form")[0]);
     $.ajax({
@@ -48,7 +50,12 @@ $(function(){
 
 var completeHandler = function(data){
 
-  next_page(function(){ createSchedule(data); });
+  next_page(function(){
+
+    $("input[type=button]").css("background-color", "#8e9611");
+    createSchedule(data); 
+
+  });
 
 }
 var progressHandlingFunction = function(){}
