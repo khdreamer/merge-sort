@@ -37,7 +37,7 @@ function createMergePlace(){
       if($(this).children().length < 2){ 
 
         $(this).append( $("<ol>") );
-        $("div#sink ol").sortable( {containment: "parent"} );
+        $("div#sink ol").sortable( {containment: "parent", tolerance: "pointer"} );
 
       }
       if($(this).find("ol").children().length == 4) $(this).css("height", "auto");
@@ -58,7 +58,7 @@ function createMergePlace(){
       if(sink.children().length < 2){ 
 
         sink.append( $("<ol>") );
-        $("div#sink ol").sortable( {containment: "parent"} );
+        $("div#sink ol").sortable( {containment: "parent", tolerance: "pointer"} );
 
     }
     if(sink.find("ol").children().length == 4) sink.css("height", "auto");
