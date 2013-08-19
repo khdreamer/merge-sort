@@ -81,7 +81,7 @@ function group(courses){
 
   // console.log(courses);
   var groups = {};
-  for(var i = 1; i < courses.length; i++){
+  for(var i = 0; i < courses.length; i++){
 
     var course = courses[i];
     var slots = time2Int( course['time'] );
