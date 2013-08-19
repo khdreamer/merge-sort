@@ -37,11 +37,11 @@ function createMergePlace(){
       if($(this).children().length < 2){ 
 
         $(this).append( $("<ol>") );
-        $("div#sink ol").sortable();
+        $("div#sink ol").sortable( {containment: "parent"} );
 
       }
-      if($(this).find("ol").children().length == 5) $(this).css("height", "auto");
-      $(this).find("p").css("line-height", $(this).outerHeight() + "px");
+      if($(this).find("ol").children().length == 4) $(this).css("height", "auto");
+      $(this).find("p").css("line-height", $(this).outerHeight()-6 + "px");
       var li = $( "<li></li>" ).text( ui.draggable.text() );
       $(this).find("ol").append(li);
       $(ui.draggable).remove();
@@ -58,11 +58,11 @@ function createMergePlace(){
       if(sink.children().length < 2){ 
 
         sink.append( $("<ol>") );
-        $("div#sink ol").sortable();
+        $("div#sink ol").sortable( {containment: "parent"} );
 
     }
-    if(sink.find("ol").children().length == 5) sink.css("height", "auto");
-    sink.find("p").css("line-height", sink.outerHeight() + "px");
+    if(sink.find("ol").children().length == 4) sink.css("height", "auto");
+    sink.find("p").css("line-height", sink.outerHeight()-6 + "px");
 
     // append
     var li = $( "<li></li>" ).text( $(this).text() );

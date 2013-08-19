@@ -92,6 +92,11 @@ function createSchedule(data){
     canvas.append(groups_arr[i]);
 
   }
+  $(".group").each(function(i, e){
+
+    $(this).css("width", $(this).width()+2+"px");
+
+  });
   
   var btn = $("<div class=\"next_page\">排好了</div>");
   $("#page2 .canvas").append(btn);
@@ -123,7 +128,7 @@ function createGroups(group_data, group_num){
 
   }
 
-  ul.sortable();
+  ul.sortable({ containment: "parent" });
   group.append(ul);
   group.attr("group_num", group_num);
   group.draggable( {

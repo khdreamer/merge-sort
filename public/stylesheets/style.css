@@ -397,6 +397,7 @@ div.group {
   -webkit-box-shadow: 0 0 10px rgba(0,0,0,.5);
 
   z-index: 10;
+  overflow: auto;
 
 }
 
@@ -449,6 +450,7 @@ div#sink {
   margin: 0 0 30px 0;
   padding: 20px 0;
   position: relative;
+  overflow: auto;
 
 }
 
@@ -456,7 +458,7 @@ div#sink p {
 
   text-align: center;
   color: #999;
-  line-height: 242px;
+  line-height: 236px;
   font-size: 20px;
   position: absolute;
   width: 100%;
