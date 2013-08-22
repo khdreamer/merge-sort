@@ -33,19 +33,20 @@ function createMergePlace(){
     accept: ".course:not(.ui-sortable-helper)",
     drop: function(event, ui){
 
-      $(this).find("p").css("opacity", 0.5);
-      if($(this).children().length < 2){ 
+      addedCourseToSink(ui.draggable, $(this));
+      // $(this).find("p").css("opacity", 0.5);
+      // if($(this).children().length < 2){ 
 
-        $(this).append( $("<ol>") );
-        $("div#sink ol").sortable( {containment: "parent", tolerance: "pointer"} );
+      //   $(this).append( $("<ol>") );
+      //   $("div#sink ol").sortable( {containment: "parent", tolerance: "pointer"} );
 
-      }
-      if($(this).find("ol").children().length == 4) $(this).css("height", "auto");
-      $(this).find("p").css("line-height", $(this).outerHeight()-6 + "px");
-      var li = $( "<li></li>" ).text( ui.draggable.text() );
-      $(this).find("ol").append(li);
-      $(ui.draggable).remove();
-      $("html, body").height($("#page3").outerHeight());
+      // }
+      // if($(this).find("ol").children().length == 4) $(this).css("height", "auto");
+      // $(this).find("p").css("line-height", $(this).outerHeight()-6 + "px");
+      // var li = $( "<li></li>" ).text( ui.draggable.text() );
+      // $(this).find("ol").append(li);
+      // $(ui.draggable).remove();
+      // $("html, body").height($("#page3").outerHeight());
 
     }
   });
@@ -54,23 +55,24 @@ function createMergePlace(){
 
     // setup sink
     var sink = $("#sink");
-    sink.find("p").css("opacity", 0.5);
-      if(sink.children().length < 2){ 
+    addedCourseToSink($(this), sink);
+    // sink.find("p").css("opacity", 0.5);
+    //   if(sink.children().length < 2){ 
 
-        sink.append( $("<ol>") );
-        $("div#sink ol").sortable( {containment: "parent", tolerance: "pointer"} );
+    //     sink.append( $("<ol>") );
+    //     $("div#sink ol").sortable( {containment: "parent", tolerance: "pointer"} );
 
-    }
-    if(sink.find("ol").children().length == 4) sink.css("height", "auto");
-    sink.find("p").css("line-height", sink.outerHeight()-6 + "px");
+    // }
+    // if(sink.find("ol").children().length == 4) sink.css("height", "auto");
+    // sink.find("p").css("line-height", sink.outerHeight()-6 + "px");
 
-    // append
-    var li = $( "<li></li>" ).text( $(this).text() );
-    sink.find("ol").append(li);
-    $(this).remove();
+    // // append
+    // var li = $( "<li></li>" ).text( $(this).text() );
+    // sink.find("ol").append(li);
+    // $(this).remove();
 
-    // other settings
-    $("html, body").height($("#page3").outerHeight());
+    // // other settings
+    // $("html, body").height($("#page3").outerHeight());
 
   }).css("cursor", "pointer");
 
@@ -80,5 +82,28 @@ function createMergePlace(){
     next_page(createResult);
 
   });
+
+}
+
+function addedCourseToSink(course, sink){
+
+  sink.find("p").css("opacity", 0.5);
+    if(sink.children().length < 2){ 
+
+      sink.append( $("<ol>") );
+      $("div#sink ol").sortable( {containment: "parent", tolerance: "pointer"} );
+
+  }
+  if(sink.find("ol").children().length == 4) sink.css("height", "auto");
+  sink.find("p").css("line-height", sink.outerHeight()-6 + "px");
+
+  // append
+  var li = $( "<li></li>" ).text( course.text() );
+  sink.find("ol").append(li);
+  course.remove();
+
+  // other settings
+  $("html, body").height($("#page3").outerHeight());
+
 
 }
